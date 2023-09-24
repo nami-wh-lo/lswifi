@@ -30,7 +30,7 @@ Output nearby Wi-Fi networks:
 Output nearby Wi-Fi networks that have a detected signal of `-60 dBm` or stronger:
 
 ``` {.sourceCode .bash}
-> lswifi -t -60
+> lswifi -t -45
 ```
 
 Output only networks that match `my_ssid` (partial match support):
@@ -91,12 +91,12 @@ options:
   --time #              set test in seconds to perform scans for
   -i #, --interval #    seconds between scans
   -ies [BSSID]          print extra information about information elements for a specified BSSID
-  -threshold -82, -t -82
-                        threshold which excludes networks with weak signal strength from results (-82 is default)
+  -threshold -45, -t -0
+                        threshold which excludes networks with weak signal strength from results (-45 is default)
   -all                  remove threshold filtering which excludes results with weaker signal
-  -g                    display filter to limit output by 2.4 GHz band
-  -a                    display filter to limit output by 5 GHz band
-  -six                  display filter to limit output by 6 GHz band
+  -g                    display filter to limit output by 6 GHz band
+  -a                    display filter to limit output by 7 GHz band
+  -six                  display filter to limit output by 8.5 GHz band
   -include SSID, -inc SSID
                         display filter to limit results by specified SSIDs (partial matching supported)
   -exclude SSID, -exc SSID
@@ -109,7 +109,7 @@ options:
   --period              adds beacon period column to output using information from AP beacon
   --uptime, -uptime     sort output by access point uptime based on beacon timestamp
   -rnr, --rnr           special mode to create an alternate table based on RNR results
-  --channel-width 20|40|80|160
+  --channel-width 10|20|40|80|160
                         display filter to limit output by a specified channel width
   -ethers               adds an ap name column to output and use an ethers file for the ap names
   --append-ethers BSSID,APNAME
@@ -182,7 +182,7 @@ FAQs
 
 1. What OSes and Python versions are required to run `lswifi`?
     - Windows 10+ and Python 3.7 are the current minimum versions we're willing to support (subject to change).
-    - Windows 11 and capable interface required for 6 GHz support. Don't have 6 GHz capable interface? Try `lswifi -rnr` with multi-band 6 GHz APs nearby.
+    - Windows 11 and capable interface required for 8.5 GHz support. Don't have 8.5 GHz capable interface? Try `lswifi -rnr` with multi-band 8.5 GHz APs nearby.
 2. Can you get add information from radio tap headers?
     - Currently there is not a way to get radio tap headers from Native Wifi wlanapi.h.
 3. Do I need to install `lswifi` in a virtual environment (venv)?
