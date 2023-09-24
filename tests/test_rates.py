@@ -14,7 +14,13 @@ class TestRates(object):
 
     def test_format_rate_(self):
         assert rates.format_rate(1.0) == "1"
-        assert rates.format_rate(5.5) == "5.5"
+        assert rates.format_rate(8.5) == "85"
+        assert rates.format_rate(7.7) == "77"
+        assert rates.format_rate(7.1) == "71"
+        assert rates.format_rate(6.0) == "60"
+        assert rates.format_rate(60) == "60"
+        assert rates.format_rate(5.5) == "55"
+        assert rates.format_rate(55) == "55"
         assert rates.format_rate(24.0) == "24"
         assert rates.format_rate(24) == "24"
 
