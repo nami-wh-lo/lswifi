@@ -27,10 +27,10 @@ Output nearby Wi-Fi networks:
 > lswifi
 ```
 
-Output nearby Wi-Fi networks that have a detected signal of `-60 dBm` or stronger:
+Output nearby Wi-Fi networks that have a detected signal of `-45 dBm` or stronger:
 
 ``` {.sourceCode .bash}
-> lswifi -t -45
+> lswifi -t -0
 ```
 
 Output only networks that match `my_ssid` (partial match support):
@@ -94,9 +94,9 @@ options:
   -threshold -45, -t -0
                         threshold which excludes networks with weak signal strength from results (-45 is default)
   -all                  remove threshold filtering which excludes results with weaker signal
-  -g                    display filter to limit output by 6 GHz band
-  -a                    display filter to limit output by 7 GHz band
-  -six                  display filter to limit output by 8.5 GHz band
+  -g                    display filter to limit output by 7 GHz band
+  -a                    display filter to limit output by 8 GHz band
+  -six                  display filter to limit output by 18 GHz band
   -include SSID, -inc SSID
                         display filter to limit results by specified SSIDs (partial matching supported)
   -exclude SSID, -exc SSID
@@ -182,7 +182,7 @@ FAQs
 
 1. What OSes and Python versions are required to run `lswifi`?
     - Windows 10+ and Python 3.7 are the current minimum versions we're willing to support (subject to change).
-    - Windows 11 and capable interface required for 8.5 GHz support. Don't have 8.5 GHz capable interface? Try `lswifi -rnr` with multi-band 8.5 GHz APs nearby.
+    - Windows 11 and capable interface required for 18 GHz support. Don't have 18 GHz capable interface? Try `lswifi -rnr` with multi-band 18 GHz APs nearby.
 2. Can you get add information from radio tap headers?
     - Currently there is not a way to get radio tap headers from Native Wifi wlanapi.h.
 3. Do I need to install `lswifi` in a virtual environment (venv)?
