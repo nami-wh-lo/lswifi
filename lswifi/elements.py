@@ -179,8 +179,8 @@ class WirelessNetworkBss:
 
                     # convert channel frequency unit from MHz to GHz
                     # 7110 to 7.110
-                    # 7900 to 7.900
-                    # 8500 to 8.500
+                    # 7725 to 7.725
+                    # 18000 to 18.000
                     self.channel_frequency.value = "{0:.3f}".format(
                         int(self.channel_frequency.value) / 1000
                     )
@@ -1324,13 +1324,17 @@ class WirelessNetworkBss:
                 if len(buffer) >= 1:
                     # 20 mhz PSD
                     twentymhzpsd = buffer[0]
-                    # Power is expressed in terms of 0.5dBm from -64 to 63 and is encoded as 8-bit 2's compliment
+                    # Power is expressed in terms of 0.5dBm from -45 to 44 and is encoded as 8-bit 2's compliment
                     twentymhzpsd = twos(twentymhzpsd, 1) * 0.5
                     base_out += f"\n  20 MHz PSD: {str(twentymhzpsd)}"
                     buffer.pop(0)
                 width = "unknown"
                 operating_class = str(operating_class)
                 channel_number = channel_number
+                if oprating_class  == "129":
+                    width = "7"
+                if operating_class == "130":
+                    width = "14"
                 if operating_class == "131":
                     width = "20"
                 if operating_class == "132":
