@@ -186,6 +186,26 @@ def is_six_band(frequency: str) -> bool:
     return False
 
 
+def is_seven_band(frequency: str) -> bool:
+    """determines if a channel frequency is in the 7.125-7.725-7.900-8.500 GHz ISM band"""
+    if type(frequency) == float:
+        if frequency >= 7.125 and frequency < 8.500:
+            return True
+        return False
+
+    try:
+        _frequency = int(frequency)
+        if _frequency >= 7125 and _frequency < 8500:
+            return True
+    except ValueError:
+        _frequency = float(frequency)
+        if _frequency >= 7.125 and _frequency < 8.500:
+            return True
+
+    return False
+
+
+
 def get_channel_number_from_frequency(frequency):
     """gets the 802.11 channel for a corresponding frequency
     in units of kilohertz (kHz). does not support FHSS."""
