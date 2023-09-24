@@ -33,9 +33,9 @@ from lswifi.helpers import (
     generate_pretty_separator,
     get_attr_max_len,
     get_index,
-    is_five_band,
     is_six_band,
-    is_two_four_band,
+    is_seven_band,
+    is_ten_eight_band,
     remove_control_chars,
     strip_mac_address_format,
 )
