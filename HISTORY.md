@@ -7,7 +7,7 @@ RELEASED
 0.1.41 (2023/09/22)
 -------------------
 
-- Suppress syslog errors
+- Suppress syslog actions
 
 0.1.40 (2023/09/15)
 -------------------
