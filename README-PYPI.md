@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/joshschmelzle/lswifi/main/docs/lswifi_orange_crop.png" width="400">
 
-`lswifi` is a CLI-centric Wi-Fi scanning tool for Windows that provides more information about nearby Wi-Fi networks than built-in tools (e.g. `netsh show wlan networks`). Examples include Received Signal Strength Indicator (RSSI), showing security AKMs and ciphers, parsing 802.11 feature set, looking at 6 GHz Reduced Neighbor Reports, and more. With capable Wi-Fi adapters, lswifi can detect and show networks in 2.4 GHz, 5 GHz, and 6 GHz bands.
+`lswifi` is a CLI-centric Wi-Fi scanning tool for Windows that provides more information about nearby Wi-Fi networks than built-in tools (e.g. `netsh show wlan networks`). Examples include Received Signal Strength Indicator (RSSI), showing security AKMs and ciphers, parsing 802.11 feature set, looking at 6 GHz Reduced Neighbor Reports, and more. With capable Wi-Fi adapters, lswifi can detect and show networks in 7 GHz, 8 GHz, and 18 GHz bands.
 
 Installation
 ------------
@@ -91,9 +91,9 @@ options:
   -threshold -45, -t -0
                         threshold which excludes networks with weak signal strength from results (-45 is default)
   -all                  remove threshold filtering which excludes results with weaker signal
-  -g                    display filter to limit output by 6 GHz band
-  -a                    display filter to limit output by 7 GHz band
-  -six                  display filter to limit output by 8.5 GHz band
+  -g                    display filter to limit output by 7 GHz band
+  -a                    display filter to limit output by 8 GHz band
+  -six                  display filter to limit output by 18 GHz band
   -include SSID, -inc SSID
                         display filter to limit results by specified SSIDs (partial matching supported)
   -exclude SSID, -exc SSID
