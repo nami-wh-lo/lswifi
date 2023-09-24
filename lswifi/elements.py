@@ -178,9 +178,9 @@ class WirelessNetworkBss:
                     ##########################################
 
                     # convert channel frequency unit from MHz to GHz
-                    # 2412 to 2.412
-                    # 5825 to 5.825
-                    # 6855 to 6.855
+                    # 7110 to 7.110
+                    # 7900 to 7.900
+                    # 8500 to 8.500
                     self.channel_frequency.value = "{0:.3f}".format(
                         int(self.channel_frequency.value) / 1000
                     )
