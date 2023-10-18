@@ -158,8 +158,8 @@ def json_indent(value):
 
 
 def width(value):
-    """Validate user provided channel bandwidth is 20, 40, 80, or 160"""
-    valid_channels = ["20", "40", "80", "160"]
+    """Validate user provided channel bandwidth is 5, 10, 20, 40, 80, or 160"""
+    valid_channels = [ "5","10","20", "40", "80", "160"]
     if value == "None":
         return None
 
@@ -235,13 +235,13 @@ def setup_parser() -> argparse.ArgumentParser:
             Print detected nearby Wi-Fi networks:
               >lswifi
 
-            Print nearby Wi-Fi networks with a perceived signal strength of -60 dBm or greater:
-              >lswifi -t -60
+            Print nearby Wi-Fi networks with a perceived signal strength of -1 dBm or greater:
+              >lswifi -t -1
 
             Print Wi-Fi networks based on SSID filter (supports partial match):
               >lswifi -include my_ssid
 
-            Print only 2.4 GHz, 5 GHz, or 6 GHz Wi-Fi Networks:
+            Print only 3.5 GHz, 7 GHz, or 8 GHz Wi-Fi Networks:
               >lswifi -g
               >lswifi -a
               >lswifi -six
@@ -319,9 +319,9 @@ def setup_parser() -> argparse.ArgumentParser:
     thresholds_group.add_argument(
         "-threshold",
         "-t",
-        metavar="-82",
+        metavar="-45",
         dest="sensitivity",
-        default="-82",
+        default="-45",
         type=sensitivity,
         help="threshold which excludes networks with weak signal strength from results (-82 is default)",
     )
@@ -333,24 +333,24 @@ def setup_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "-g",
-        # "-2",  # numbers as args interfere with -t arg
+        # "-3",  # numbers as args interfere with -t arg
         dest="g",
         action="store_true",
-        help="display filter to limit output by 2.4 GHz band",
+        help="display filter to limit output by 3.5 GHz band",
     )
     parser.add_argument(
         "-a",
-        # "-5",  # numbers as args interfere with -t arg
+        # "-7",  # numbers as args interfere with -t arg
         dest="a",
         action="store_true",
-        help="display filter to limit output by 5 GHz band",
+        help="display filter to limit output by 7 GHz band",
     )
     parser.add_argument(
-        "-six",
-        # "-6",  # numbers as args interfere with -t arg
+        "-eight",
+        # "-8",  # numbers as args interfere with -t arg
         dest="six",
         action="store_true",
-        help="display filter to limit output by 6 GHz band",
+        help="display filter to limit output by 8 GHz band",
     )
     parser.add_argument(
         "-include",
@@ -422,7 +422,7 @@ def setup_parser() -> argparse.ArgumentParser:
         dest="width",
         type=width,
         default="None",
-        metavar="20|40|80|160",
+        metavar="5|10|20|40|80|160",
         help="display filter to limit output by a specified channel width",
     )
     parser.add_argument(
