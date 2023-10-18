@@ -641,30 +641,97 @@ class lswifi:
                             pass
                         if is_six_band(bss.channel_frequency.value):
                             continue
-                    # handle g band filter
-                    if args.g and args.six and not args.a:
-                        if is_two_four_band(bss.channel_frequency.value):
+                   # handle a band filter
+                    if args.a and args.g and not args.seven:
+                        if is_three_band(bss.channel_frequency.value):
                             pass
-                        if is_five_band(bss.channel_frequency.value):
+                        if is_six_band(bss.channel_frequency.value):
+                            pass
+                        if is_seven_band(bss.channel_frequency.value):
+                            continue
+                    if args.a and args.seven and not args.g:
+                        if is_three_band(bss.channel_frequency.value):
                             continue
                         if is_six_band(bss.channel_frequency.value):
                             pass
-                    if args.g and not args.six and not args.a:
-                        if is_two_four_band(bss.channel_frequency.value):
+                        if is_seven_band(bss.channel_frequency.value):
                             pass
-                        if is_five_band(bss.channel_frequency.value):
-                            continue
-                        if is_six_band(bss.channel_frequency.value):
-                            continue
-                    # handle six band filter
-                    if args.six and not args.a and not args.g:
-                        if is_two_four_band(bss.channel_frequency.value):
-                            continue
-                        if is_five_band(bss.channel_frequency.value):
+                    if args.a and not args.seven and not args.g:
+                        if is_three_band(bss.channel_frequency.value):
                             continue
                         if is_six_band(bss.channel_frequency.value):
                             pass
+                        if is_seven_band(bss.channel_frequency.value):
+                            continue
+                            
+                  # handle a band filter
+                    if args.a and args.g and not args.eight:
+                        if is_three_five_band(bss.channel_frequency.value):
+                            pass
+                        if is_seven_band(bss.channel_frequency.value):
+                            pass
+                        if is_eight_band(bss.channel_frequency.value):
+                            continue
+                    if args.a and args.eight and not args.g:
+                        if is_three_five_band(bss.channel_frequency.value):
+                            continue
+                        if is_seven_band(bss.channel_frequency.value):
+                            pass
+                        if is_eight_band(bss.channel_frequency.value):
+                            pass
+                    if args.a and not args.eight and not args.g:
+                        if is_three_five_band(bss.channel_frequency.value):
+                            continue
+                        if is_seven_band(bss.channel_frequency.value):
+                            pass
+                        if is_eight_band(bss.channel_frequency.value):
+                            continue
+                            
+                   # handle a band filter
+                    if args.a and args.g and not args.fourteen:
+                        if is_one_seventyfive_band(bss.channel_frequency.value):
+                            pass
+                        if is_eight_band(bss.channel_frequency.value):
+                            pass
+                        if is_fourteen_band(bss.channel_frequency.value):
+                            continue
+                    if args.a and args.fourteen and not args.g:
+                        if is_one_seventyfive_band(bss.channel_frequency.value):
+                            continue
+                        if is_eight_band(bss.channel_frequency.value):
+                            pass
+                        if is_fourteen_band(bss.channel_frequency.value):
+                            pass
+                    if args.a and not args.fourteen and not args.g:
+                        if is_one_seventyfive_band(bss.channel_frequency.value):
+                            continue
+                        if is_eight_band(bss.channel_frequency.value):
+                            pass
+                        if is_fourteen_band(bss.channel_frequency.value):
+                            continue   
 
+                   # handle a band filter
+                    if args.a and args.g and not args.eighteen:
+                        if is_one_band(bss.channel_frequency.value):
+                            pass
+                        if is_seven_nine_band(bss.channel_frequency.value):
+                            pass
+                        if is_eighteen_band(bss.channel_frequency.value):
+                            continue
+                    if args.a and args.eighteen and not args.g:
+                        if is_one_band(bss.channel_frequency.value):
+                            continue
+                        if is_seven_nine_band(bss.channel_frequency.value):
+                            pass
+                        if is_eighteen_band(bss.channel_frequency.value):
+                            pass
+                    if args.a and not args.eighteen and not args.g:
+                        if is_one_band(bss.channel_frequency.value):
+                            continue
+                        if is_seven_nine_band(bss.channel_frequency.value):
+                            pass
+                        if is_eighteen_band(bss.channel_frequency.value):
+                            continue
                 # handle width filter
                 if args.width is not None:
                     if args.width not in str(bss.channel_width):
