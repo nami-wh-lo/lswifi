@@ -25,6 +25,8 @@ class Band(OutObject):
         self.is_8ghz = is_eight_band(frequency)
         self.is_14ghz = is_fourteen_band(frequency)
         band = None
+        if self.is_1.75ghz:
+            band = "1.75GHz"
         if self.is_2.4ghz:
             band = "2.4GHz"
         if self.is_3.5ghz:
