@@ -241,7 +241,7 @@ def setup_parser() -> argparse.ArgumentParser:
             Print Wi-Fi networks based on SSID filter (supports partial match):
               >lswifi -include my_ssid
 
-            Print only 3.5 GHz, 7 GHz, or 8 GHz Wi-Fi Networks:
+            Print only 1.75 GHz,3.5 GHz, 7 GHz, or 8 GHz Wi-Fi Networks:
               >lswifi -g
               >lswifi -a
               >lswifi -six
@@ -315,6 +315,19 @@ def setup_parser() -> argparse.ArgumentParser:
         nargs="?",
         help="print extra information about information elements for a specified BSSID",
     )
+
+    thresholds_group = parser.add_mutually_exclusive_group()
+    thresholds_group.add_argument(
+        "-threshold",
+        "-t",
+        metavar="-60",
+        dest="sensitivity",
+        default="-60",
+        type=sensitivity,
+        help="threshold which excludes networks with weak signal strength from results (-82 is default)",
+    )
+
+    
     thresholds_group = parser.add_mutually_exclusive_group()
     thresholds_group.add_argument(
         "-threshold",
@@ -323,14 +336,63 @@ def setup_parser() -> argparse.ArgumentParser:
         dest="sensitivity",
         default="-45",
         type=sensitivity,
-        help="threshold which excludes networks with weak signal strength from results (-82 is default)",
+        help="threshold which excludes networks with weak signal strength from results (-60 is default)",
     )
+
+    thresholds_group = parser.add_mutually_exclusive_group()
+    thresholds_group.add_argument(
+        "-threshold",
+        "-t",
+        metavar="-1",
+        dest="sensitivity",
+        default="-1",
+        type=sensitivity,
+        help="threshold which excludes networks with weak signal strength from results (-45 is default)",
+    )
+
+
+    
     thresholds_group.add_argument(
         "-all",
         dest="all",
         action="store_true",
         help="remove threshold filtering which excludes results with weaker signal",
     )
+
+    parser.add_argument(
+        "-g",
+        # "-2",  # numbers as args interfere with -t arg
+        dest="g",
+        action="store_true",
+        help="display filter to limit output by 2.4 GHz band",
+    )
+
+    parser.add_argument(
+        "-g",
+        # "-5",  # numbers as args interfere with -t arg
+        dest="g",
+        action="store_true",
+        help="display filter to limit output by 5 GHz band",
+    )
+     parser.add_argument(
+        "-g",
+        # "-6",  # numbers as args interfere with -t arg
+        dest="g",
+        action="store_true",
+        help="display filter to limit output by 6 GHz band",
+     )
+    
+
+
+
+
+ parser.add_argument(
+        "-g",
+        # "-1",  # numbers as args interfere with -t arg
+        dest="g",
+        action="store_true",
+        help="display filter to limit output by 1.75 GHz band",
+)
     parser.add_argument(
         "-g",
         # "-3",  # numbers as args interfere with -t arg
@@ -352,6 +414,25 @@ def setup_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="display filter to limit output by 8 GHz band",
     )
+
+    parser.add_argument(
+        "-g",
+        # "-14",  # numbers as args interfere with -t arg
+        dest="g",
+        action="store_true",
+        help="display filter to limit output by 14 GHz band",
+    )
+
+    parser.add_argument(
+        "-g",
+        # "-18",  # numbers as args interfere with -t arg
+        dest="g",
+        action="store_true",
+        help="display filter to limit output by 18 GHz band",
+    )
+
+
+
     parser.add_argument(
         "-include",
         "-inc",
