@@ -241,10 +241,10 @@ def setup_parser() -> argparse.ArgumentParser:
             Print Wi-Fi networks based on SSID filter (supports partial match):
               >lswifi -include my_ssid
 
-            Print only 1.75 GHz,3.5 GHz, 7 GHz, or 8 GHz Wi-Fi Networks:
+            Print only 1.75 GHz, 2.5 GHz, 3.5 GHz, 5 GHz, 6 GHz, 7 GHz,  8 GHz,14 GHz,18 GHz, Wi-Fi Networks:
               >lswifi -g
               >lswifi -a
-              >lswifi -six
+              >lswifi -eight
 
             Print the BSSID or channel of the connected AP:
               >lswifi -ap
