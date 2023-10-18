@@ -7,7 +7,7 @@ lswifi.band
 schema definition for band [1.75,2.4,3.5,5,6,7,8,14,]
 """
 
-from lswifi.helpers import is_five_band,is_eight_band,is_seven_band, is_six_band, is_two_four_band
+from lswifi.helpers import is_eight_band,is_seven_band, is_six_band,is_five_band,is_two_four_band
 
 from .out import *
 
